@@ -10,7 +10,7 @@ export class Napiidojaras {
             throw new Error(`A maximum hőmérsékelt nincs megvelelően megadva: ${napiMinHomerseklet}`);
         };
         if (typeof idojarasSzovegesen != "string" || idojarasSzovegesen == null || idojarasSzovegesen == undefined) {
-            throw new Error(`A maximum hőmérsékelt nincs megvelelően megadva: ${napimanapiMaxHomerseklet}`);
+            throw new Error(`A maximum hőmérsékelt nincs megvelelően megadva: ${idojarasSzovegesen}`);
         };
         this.aHetNapja = aHetNapja;
         this.napiMaxHomerseklet = napiMaxHomerseklet;
