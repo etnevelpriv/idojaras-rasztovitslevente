@@ -1,6 +1,6 @@
 import readline from 'readline';
 import { Napiidojaras } from './Napiidojaras.js';
-
+import fs from "node:fs"
 
 
 const mainIdojaras = function () {
@@ -31,9 +31,14 @@ const mainIdojaras = function () {
     return idojarasPromise;
 };
 
-const init = async function () {
-    const idojaras = await mainIdojaras();
-    console.log(idojaras.toString())
+const beolvas = async function () {
+     try {
+        const resp = fs.readFileSync('idojaras.csv');
+        const str = resp.toString();
+        console.log(str)
+     } catch (err) {
+        throw new Error(err);
+     };
 };
 
-init();
+beolvas();
