@@ -17,7 +17,7 @@ export const mainIdojaras = function () {
                 console.log(`Min: ${min}`);
                 rl.question('Milyen az időjárás típusa? ', (type) => {
                     console.log(`Tipus: ${type}`);
-                    const day = new Date();
+                    const day = new Date().getDay();
                     rl.close();
                     resolve(new Napiidojaras(Number(day), Number(max), Number(min), type));
                 });
