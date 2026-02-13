@@ -18,14 +18,10 @@ export const mainIdojaras = function () {
                 rl.question('Milyen az időjárás típusa? ', (type) => {
                     console.log(`Tipus: ${type}`);
                     const day = new Date();
-                    resolve(new Napiidojaras(Number(day), Number(max), Number(min), type));
                     rl.close();
+                    resolve(new Napiidojaras(Number(day), Number(max), Number(min), type));
                 });
             });
-        });
-
-        rl.on('close', () => {
-            process.exit(0);
         });
     });
     return idojarasPromise;
