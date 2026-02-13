@@ -3,7 +3,7 @@ import { Napiidojaras } from './Napiidojaras.js';
 import fs from "node:fs"
 
 
-const mainIdojaras = function () {
+export const mainIdojaras = function () {
     const idojarasPromise = new Promise((resolve) => {
 
         const rl = readline.createInterface({
@@ -31,7 +31,7 @@ const mainIdojaras = function () {
     return idojarasPromise;
 };
 
-const beolvas = async function () {
+export const beolvas = async function () {
     try {
         const resp = fs.readFileSync('idojaras.csv');
         const data = resp.toString().split('\n').splice(1);
@@ -44,7 +44,7 @@ const beolvas = async function () {
             const type = data[i].split(';')[3];
             arr.push(new Napiidojaras(Number(day), Number(max), Number(min), type));
         };
-        console.log(arr)
+        // console.log(arr)
         return arr;
     } catch (err) {
         throw new Error(err);
