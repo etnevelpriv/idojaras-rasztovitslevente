@@ -1,8 +1,8 @@
-class Napiidojaras {
+export class Napiidojaras {
     constructor (aHetNapja, napiMaxHomerseklet, napiMinHomerseklet, idojarasSzovegesen) {
         this.aHetNapja = aHetNapja;
         this.napiMaxHomerseklet = napiMaxHomerseklet;
-        this.napiMinHomerseklet = napiMaxHomerseklet;
+        this.napiMinHomerseklet = napiMinHomerseklet;
         this.idojarasSzovegesen = idojarasSzovegesen;
     };
     toString () {
