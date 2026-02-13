@@ -32,13 +32,23 @@ const mainIdojaras = function () {
 };
 
 const beolvas = async function () {
-     try {
+    try {
         const resp = fs.readFileSync('idojaras.csv');
-        const str = resp.toString();
-        console.log(str)
-     } catch (err) {
+        const data = resp.toString().split('\n').splice(1);
+        const arr = [];
+        // console.log(data);
+        for (let i = 0; i < data.length; i++) {
+            const day = data[i].split(';')[0];
+            const max = data[i].split(';')[1];
+            const min = data[i].split(';')[2];
+            const type = data[i].split(';')[3];
+            arr.push(new Napiidojaras(Number(day), Number(max), Number(min), type));
+        };
+        console.log(arr)
+        return arr;
+    } catch (err) {
         throw new Error(err);
-     };
+    };
 };
 
 beolvas();
